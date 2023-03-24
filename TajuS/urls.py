@@ -19,7 +19,6 @@ from django.urls import path, include
 from jet import urls as jet_urls
 
 from django.conf import settings
-from usersdata.views import index
 
 urlpatterns = [
 
