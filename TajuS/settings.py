@@ -51,7 +51,9 @@ JET_SIDE_MENU_ITEMS = [
     {'app_label': 'usersdata', 'items': [
         {'name': 'user'},
         {'name': 'passport'},
-        {'name': 'migrationcard'}
+        {'name': 'migrationcard'},
+        {'name': 'workpermit'},
+
     ]},
 ]
 JET_INDEX_DASHBOARD = 'jet.dashboard.dashboard.DefaultIndexDashboard'
