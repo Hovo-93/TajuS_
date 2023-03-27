@@ -19,12 +19,13 @@ from django.urls import path, include
 from jet import urls as jet_urls
 
 from django.conf import settings
-
+from usersdata import urls
 urlpatterns = [
 
     path('jet/', include(jet_urls, 'jet')),  # Django Jet urls
     path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET dashboard URLS
     path('admin/', admin.site.urls),
+    path('', include('usersdata.urls')),
 ]
 
 if settings.DEBUG:
