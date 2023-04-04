@@ -41,10 +41,21 @@ class UserModelAdmin(admin.ModelAdmin):
     def has_passport(self, obj):
         return obj.passport.exists()
 
+    def has_migration_card(self, obj):
+        return obj.migration_card.exists()
+
+    def has_work_permit(self, obj):
+        return obj.patent.exists()
+
     has_passport.boolean = True
+    has_migration_card.boolean = True
+    has_work_permit.boolean = True
     has_passport.short_description = 'Passport'
+    has_migration_card.short_description = 'M_Card'
+    has_work_permit.short_description = 'Patent'
+
     list_display = ('username', 'first_name', 'last_name', 'patronymic', 'birthday',
-                    'email', 'avatar_preview', 'role', 'has_passport')
+                    'email', 'avatar_preview', 'role', 'has_passport', 'has_migration_card', 'has_work_permit',)
     inlines = [PassportInline, MigrationCardInline, WorkPermitInline, ]
 
 
