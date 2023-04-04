@@ -57,8 +57,10 @@ class MigrationCard(models.Model):
     duration_of_stay_from = models.DateField(_('Duration OF Stay From'))
     duration_of_stay_to = models.DateField(_('Duration OF Stay To'))
     card_photo = models.ImageField(_('Migration Card Photo'), upload_to='migration_card/photo/% Y/% m/% d/', null=True)
+
     def __str__(self):
         return f'№ {self.serial} {self.number}'
+
     def card_preview(self):
         return mark_safe('<img src = "{url}" width = "100"/>'.format(
             url=self.card_photo.url
@@ -71,6 +73,9 @@ class WorkPermit(models.Model):
     number = models.CharField(max_length=20)
     date_of_issue = models.DateField(_('Date Of Issue'))
     patent_photo = models.ImageField(_('Patent Photo'), upload_to='patent_photo/photo/% Y/% m/% d/', null=True)
+
+    def __str__(self):
+        return f'{self.serial} {self.number}'
 
     def patent_preview(self):
         return mark_safe('<img src="{url}" width = "100"/>'.
